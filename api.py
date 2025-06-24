@@ -21,6 +21,18 @@ def connect_to_db():
 	return conn
 
 
+# placeholder func, you are definitely NOT supposed to do this
+@app.route('/api/build_schema', methods=['POST'])
+def build_schema():
+	conn = connect_to_db()
+	cur = conn.cursor()
+	cur.execute('CREATE TABLE receipts (id SERIAL PRIMARY KEY, store TEXT, date TIMESTAMP, item TEXT, price MONEY)')
+
+	conn.commit()
+	cur.close()
+	conn.close()
+
+
 @app.route('/api/get_all_receipts', methods=['GET'])
 def get_all_receipts():
 	conn = connect_to_db()
