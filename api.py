@@ -2,7 +2,7 @@ import os
 
 import psycopg2
 from dotenv import load_dotenv
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 load_dotenv()
@@ -21,8 +21,8 @@ def connect_to_db():
 	return conn
 
 
-@app.route('/api/receipts', methods=['GET'])
-def get_receipts():
+@app.route('/api/get_all_receipts', methods=['GET'])
+def get_all_receipts():
 	conn = connect_to_db()
 	cur = conn.cursor()
 	cur.execute('SELECT * FROM receipts')
@@ -32,3 +32,18 @@ def get_receipts():
 
 	receipts = [{'id': row[0], 'name': row[1], 'email': row[2]} for row in rows]
 	return jsonify(receipts)
+
+
+@app.route('/api/add_receipt', methods=['POST'])
+def add_receipt():
+	data = request.json
+	item = data.get('item')
+	price = data.get('price')
+
+	conn = connect_to_db()
+	cur = conn.cursor()
+	cur.execute("INSERT INTO receipts (item, price) VALUES (%s, %s)",
+	            (item, price))
+	conn.commit()
+	cur.close()
+	conn.close()
