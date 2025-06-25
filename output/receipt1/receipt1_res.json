@@ -1,5 +1,5 @@
 {
-    "input_path": "receipt.png",
+    "input_path": "receipts/receipt1.png",
     "page_index": null,
     "model_settings": {
         "use_doc_preprocessor": true,
