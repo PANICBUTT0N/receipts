@@ -42,6 +42,25 @@ def build_schema():
 	conn.close()
 	return make_response(jsonify({'message': 'Schema built successfully'}), 201)
 
+@app.route('/api/get_receipt', methods=['GET'])
+def get_receipt():
+	receipt_id = request.args.get('receipt_id')
+
+	conn = connect_to_db()
+	cur = conn.cursor()
+	cur.execute('SELECT * FROM receipts WHERE id = %s', receipt_id)
+	rows = cur.fetchall()
+	cur.close()
+	conn.close()
+
+	receipts = [{
+			'id':         row[0],
+			'item':       row[1],
+			'store':      row[2],
+			'price':      row[3],
+			'date':       row[4],
+			'image_path': row[5]} for row in rows]
+	return make_response(jsonify(receipts), 200)
 
 @app.route('/api/get_all_receipts', methods=['GET'])
 def get_all_receipts():
