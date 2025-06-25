@@ -2,7 +2,7 @@ import os
 
 import psycopg2
 from dotenv import load_dotenv
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, make_response, request
 from flask_cors import CORS
 
 load_dotenv()
@@ -12,13 +12,30 @@ CORS(app)
 
 def connect_to_db():
 	conn = psycopg2.connect(
-		dbname=os.getenv('DB_NAME'),
-		user=os.getenv('DB_USER'),
-		password=os.getenv('DB_PASSWORD'),
-		host=os.getenv('DB_HOST'),
-		port=os.getenv('DB_PORT')
+			dbname=os.getenv('DB_NAME'),
+			user=os.getenv('DB_USER'),
+			password=os.getenv('DB_PASSWORD'),
+			host=os.getenv('DB_HOST'),
+			port=os.getenv('DB_PORT')
 	)
 	return conn
+
+
+@app.route('/api/build_schema', methods=['POST'])
+def build_schema():
+	conn = connect_to_db()
+	cur = conn.cursor()
+	cur.execute(
+		'CREATE TABLE receipts(id SERIAL PRIMARY KEY,'
+		'item TEXT,'
+		'store TEXT,'
+		'price MONEY,'
+		'date TIMESTAMP,'
+		'image_path TEXT)')
+	conn.commit()
+	cur.close()
+	conn.close()
+	return make_response(jsonify({'message': 'Schema built successfully'}), 201)
 
 
 @app.route('/api/get_all_receipts', methods=['GET'])
@@ -30,12 +47,13 @@ def get_all_receipts():
 	cur.close()
 	conn.close()
 
-	receipts = [{'id': row[0],
-	             'item': row[1],
-	             'store': row[2],
-	             'price': row[3],
-	             'date': row[4],
-	             'image_path': row[5]} for row in rows]
+	receipts = [{
+			'id':         row[0],
+			'item':       row[1],
+			'store':      row[2],
+			'price':      row[3],
+			'date':       row[4],
+			'image_path': row[5]} for row in rows]
 	return make_response(jsonify(receipts), 200)
 
 
@@ -50,8 +68,9 @@ def add_receipt():
 
 	conn = connect_to_db()
 	cur = conn.cursor()
-	cur.execute("INSERT INTO receipts (item, store, price, date, image_path) VALUES (%s, %s)",
-	            (item, store, price, date, image_path))
+	cur.execute(
+			"INSERT INTO receipts (item, store, price, date, image_path) VALUES (%s, %s)",
+			(item, store, price, date, image_path))
 	conn.commit()
 	cur.close()
 	conn.close()
