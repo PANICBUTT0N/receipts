@@ -2,12 +2,17 @@ import os
 
 import psycopg2
 from dotenv import load_dotenv
-from flask import Flask, jsonify, make_response, request
+from flask import Flask, jsonify, make_response, render_template, request
 from flask_cors import CORS
 
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
+
+
+@app.route('/')
+def home():
+	return render_template('index.html')
 
 
 def connect_to_db():
@@ -26,12 +31,12 @@ def build_schema():
 	conn = connect_to_db()
 	cur = conn.cursor()
 	cur.execute(
-		'CREATE TABLE receipts(id SERIAL PRIMARY KEY,'
-		'item TEXT,'
-		'store TEXT,'
-		'price MONEY,'
-		'date TIMESTAMP,'
-		'image_path TEXT)')
+			'CREATE TABLE receipts(id SERIAL PRIMARY KEY,'
+			'item TEXT,'
+			'store TEXT,'
+			'price MONEY,'
+			'date TIMESTAMP,'
+			'image_path TEXT)')
 	conn.commit()
 	cur.close()
 	conn.close()
