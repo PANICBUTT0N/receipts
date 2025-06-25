@@ -14,9 +14,9 @@ def scan_receipts(receipt):
 
     for res in result:
         print("outputting result...")
-        res.save_to_img(f"output/{output_folder}")
+        res.save_to_img(f"ocr_output/{output_folder}")
         print("saved image...")
-        res.save_to_json(f"output/{output_folder}")
+        res.save_to_json(f"ocr_output/{output_folder}")
 
     print(f"done, output in output/{output_folder}")
 
