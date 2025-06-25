@@ -31,7 +31,8 @@ class ReceiptParser:
     def __str__(self):
         return str(self.entries[:5])
     
-path = "ocr_output/receipt1/receipt1_res.json"
-receiptParser = ReceiptParser(path)
+json_path = "ocr/ocr_output/receipt1/receipt1_res.json"
+img_path = "receipts/receipt1.png"
+receiptParser = ReceiptParser(json_path, img_path)
 
 print(receiptParser)
