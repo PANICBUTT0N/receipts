@@ -30,7 +30,12 @@ def get_all_receipts():
 	cur.close()
 	conn.close()
 
-	receipts = [{'id': row[0], 'name': row[1], 'email': row[2]} for row in rows]
+	receipts = [{'id': row[0],
+	             'item': row[1],
+	             'store': row[2],
+	             'price': row[3],
+	             'date': row[4],
+	             'image_path': row[5]} for row in rows]
 	return jsonify(receipts)
 
 
@@ -38,12 +43,15 @@ def get_all_receipts():
 def add_receipt():
 	data = request.json
 	item = data.get('item')
+	store = data.get('store')
 	price = data.get('price')
+	date = data.get('date')
+	image_path = data.get('image_path')
 
 	conn = connect_to_db()
 	cur = conn.cursor()
-	cur.execute("INSERT INTO receipts (item, price) VALUES (%s, %s)",
-	            (item, price))
+	cur.execute("INSERT INTO receipts (item, store, price, date, image_path) VALUES (%s, %s)",
+	            (item, store, price, date, image_path))
 	conn.commit()
 	cur.close()
 	conn.close()
