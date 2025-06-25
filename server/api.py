@@ -2,7 +2,7 @@ import os
 
 import psycopg2
 from dotenv import load_dotenv
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS
 
 load_dotenv()
@@ -36,7 +36,7 @@ def get_all_receipts():
 	             'price': row[3],
 	             'date': row[4],
 	             'image_path': row[5]} for row in rows]
-	return jsonify(receipts)
+	return make_response(jsonify(receipts), 200)
 
 
 @app.route('/api/add_receipt', methods=['POST'])
@@ -55,3 +55,5 @@ def add_receipt():
 	conn.commit()
 	cur.close()
 	conn.close()
+
+	return make_response(jsonify({'message': 'Receipt added successfully'}), 201)
