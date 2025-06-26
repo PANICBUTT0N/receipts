@@ -1,0 +1,1317 @@
+[
+  {
+    "store": "Kroger",
+    "date": "2025-06-02 12:48:25",
+    "total": 94.84,
+    "items": [
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 2
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 9
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 7
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 7
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 1
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(555) 123-4567",
+    "payment_method": "Visa",
+    "image_path": "/img/1"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-06-19 01:11:25",
+    "total": 46.12,
+    "items": [
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 6
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 5
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 3
+      },
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 3
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 1
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(123) 456-7890",
+    "payment_method": "Discover",
+    "image_path": "/img/2"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-05-30 03:07:25",
+    "total": 41.31,
+    "items": [
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 9
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Discover",
+    "image_path": "/img/3"
+  },
+  {
+    "store": "Kroger",
+    "date": "2025-06-12 23:12:25",
+    "total": 63.9,
+    "items": [
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 1
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 9
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "Amex",
+    "image_path": "/img/4"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-06-18 01:10:25",
+    "total": 17.44,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 5
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 1
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(987) 654-3210",
+    "payment_method": "Cash",
+    "image_path": "/img/5"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-06-12 09:18:25",
+    "total": 9.96,
+    "items": [
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 3
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 1
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "Cash",
+    "image_path": "/img/6"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-09 05:35:25",
+    "total": 39.45,
+    "items": [
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 7
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 1
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 7
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "MasterCard",
+    "image_path": "/img/7"
+  },
+  {
+    "store": "Aldi",
+    "date": "2025-06-20 18:28:25",
+    "total": 6.99,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 1
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "MasterCard",
+    "image_path": "/img/8"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-04 14:01:25",
+    "total": 43.5,
+    "items": [
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 5
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 4
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 1
+      },
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 4
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 6
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(987) 654-3210",
+    "payment_method": "Cash",
+    "image_path": "/img/9"
+  },
+  {
+    "store": "Safeway",
+    "date": "2025-06-11 01:15:25",
+    "total": 103.88,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 5
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 8
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 8
+      },
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 1
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 10
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(123) 456-7890",
+    "payment_method": "Discover",
+    "image_path": "/img/10"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-02 05:40:25",
+    "total": 69.84,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 8
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 4
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 4
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "MasterCard",
+    "image_path": "/img/11"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-09 18:32:25",
+    "total": 66.53,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 1
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 10
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 10
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 6
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Cash",
+    "image_path": "/img/12"
+  },
+  {
+    "store": "Kroger",
+    "date": "2025-06-21 17:26:25",
+    "total": 3.79,
+    "items": [
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 1
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(555) 123-4567",
+    "payment_method": "Visa",
+    "image_path": "/img/13"
+  },
+  {
+    "store": "Safeway",
+    "date": "2025-06-21 15:52:25",
+    "total": 37.83,
+    "items": [
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 9
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 8
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(555) 123-4567",
+    "payment_method": "Amex",
+    "image_path": "/img/14"
+  },
+  {
+    "store": "Aldi",
+    "date": "2025-06-24 01:14:25",
+    "total": 115.51,
+    "items": [
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 8
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 9
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 8
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 4
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Amex",
+    "image_path": "/img/15"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-10 15:19:25",
+    "total": 50.57,
+    "items": [
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 7
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 6
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 4
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 6
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(987) 654-3210",
+    "payment_method": "Amex",
+    "image_path": "/img/16"
+  },
+  {
+    "store": "Walmart",
+    "date": "2025-06-02 08:41:25",
+    "total": 115.21,
+    "items": [
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 5
+      },
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 8
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 9
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 8
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 9
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "Cash",
+    "image_path": "/img/17"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-07 01:23:25",
+    "total": 106.89,
+    "items": [
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 10
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 8
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 10
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 1
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 2
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "Cash",
+    "image_path": "/img/18"
+  },
+  {
+    "store": "Kroger",
+    "date": "2025-06-13 15:12:25",
+    "total": 29.88,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 3
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 9
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Amex",
+    "image_path": "/img/19"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-11 06:28:25",
+    "total": 2.98,
+    "items": [
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 2
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(123) 456-7890",
+    "payment_method": "MasterCard",
+    "image_path": "/img/20"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-07 19:46:25",
+    "total": 46.65,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 9
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 6
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "Amex",
+    "image_path": "/img/21"
+  },
+  {
+    "store": "Safeway",
+    "date": "2025-05-28 23:52:25",
+    "total": 77.21,
+    "items": [
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 6
+      },
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 9
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 4
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(987) 654-3210",
+    "payment_method": "Amex",
+    "image_path": "/img/22"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-09 00:51:25",
+    "total": 19.9,
+    "items": [
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 10
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(123) 456-7890",
+    "payment_method": "Amex",
+    "image_path": "/img/23"
+  },
+  {
+    "store": "Safeway",
+    "date": "2025-05-28 02:47:25",
+    "total": 64.23,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 5
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 1
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 3
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 8
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(123) 456-7890",
+    "payment_method": "Visa",
+    "image_path": "/img/24"
+  },
+  {
+    "store": "Walmart",
+    "date": "2025-06-20 16:31:25",
+    "total": 78.86,
+    "items": [
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 7
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 10
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 9
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 3
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 5
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(987) 654-3210",
+    "payment_method": "MasterCard",
+    "image_path": "/img/25"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-15 15:34:25",
+    "total": 0.59,
+    "items": [
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 1
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(987) 654-3210",
+    "payment_method": "Discover",
+    "image_path": "/img/26"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-23 07:09:25",
+    "total": 60.96,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 3
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 6
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 3
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 5
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 7
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Cash",
+    "image_path": "/img/27"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-02 13:40:25",
+    "total": 58.31,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 9
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 3
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 7
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(987) 654-3210",
+    "payment_method": "Visa",
+    "image_path": "/img/28"
+  },
+  {
+    "store": "Safeway",
+    "date": "2025-05-27 14:04:25",
+    "total": 98.29,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 8
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 10
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 7
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 6
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(555) 123-4567",
+    "payment_method": "Visa",
+    "image_path": "/img/29"
+  },
+  {
+    "store": "Walmart",
+    "date": "2025-06-15 21:16:25",
+    "total": 31.04,
+    "items": [
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 8
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 8
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Visa",
+    "image_path": "/img/30"
+  },
+  {
+    "store": "Walmart",
+    "date": "2025-06-09 15:52:25",
+    "total": 52.92,
+    "items": [
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 2
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 9
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 2
+      },
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 2
+      },
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 3
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(555) 123-4567",
+    "payment_method": "Cash",
+    "image_path": "/img/31"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-23 23:05:25",
+    "total": 40.3,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 2
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 8
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(123) 456-7890",
+    "payment_method": "MasterCard",
+    "image_path": "/img/32"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-06-02 18:18:25",
+    "total": 19.08,
+    "items": [
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 2
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 10
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(555) 123-4567",
+    "payment_method": "Discover",
+    "image_path": "/img/33"
+  },
+  {
+    "store": "Aldi",
+    "date": "2025-05-27 04:25:25",
+    "total": 27.89,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 6
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 5
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Cash",
+    "image_path": "/img/34"
+  },
+  {
+    "store": "Aldi",
+    "date": "2025-06-20 23:38:25",
+    "total": 49.34,
+    "items": [
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 9
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 4
+      },
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 3
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(987) 654-3210",
+    "payment_method": "Cash",
+    "image_path": "/img/35"
+  },
+  {
+    "store": "Safeway",
+    "date": "2025-06-13 13:45:25",
+    "total": 13.38,
+    "items": [
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 5
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 7
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(987) 654-3210",
+    "payment_method": "MasterCard",
+    "image_path": "/img/36"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-06-08 10:12:25",
+    "total": 101.63,
+    "items": [
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 7
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 8
+      },
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 9
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 3
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(987) 654-3210",
+    "payment_method": "Visa",
+    "image_path": "/img/37"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-03 23:06:25",
+    "total": 10.1,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 1
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 2
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 7
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Amex",
+    "image_path": "/img/38"
+  },
+  {
+    "store": "Aldi",
+    "date": "2025-06-15 22:58:25",
+    "total": 54.2,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 2
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 10
+      },
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 8
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Discover",
+    "image_path": "/img/39"
+  },
+  {
+    "store": "Kroger",
+    "date": "2025-06-25 15:52:25",
+    "total": 95.6,
+    "items": [
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 3
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 10
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 7
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Discover",
+    "image_path": "/img/40"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-23 14:11:25",
+    "total": 38.52,
+    "items": [
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 5
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 4
+      },
+      {
+        "name": "Juice",
+        "price": 3.79,
+        "quantity": 4
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 5
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Amex",
+    "image_path": "/img/41"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-04 23:33:25",
+    "total": 43.57,
+    "items": [
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 7
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 6
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 10
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Discover",
+    "image_path": "/img/42"
+  },
+  {
+    "store": "Kroger",
+    "date": "2025-06-08 17:05:25",
+    "total": 14.94,
+    "items": [
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 6
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(123) 456-7890",
+    "payment_method": "Discover",
+    "image_path": "/img/43"
+  },
+  {
+    "store": "Costco",
+    "date": "2025-06-25 20:38:25",
+    "total": 29.26,
+    "items": [
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 3
+      },
+      {
+        "name": "Rice",
+        "price": 2.49,
+        "quantity": 6
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 2
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 2
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 1
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(555) 123-4567",
+    "payment_method": "Discover",
+    "image_path": "/img/44"
+  },
+  {
+    "store": "Target",
+    "date": "2025-06-23 06:30:25",
+    "total": 44.87,
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 3
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 7
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 3
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(123) 456-7890",
+    "payment_method": "Cash",
+    "image_path": "/img/45"
+  },
+  {
+    "store": "Kroger",
+    "date": "2025-05-31 06:23:25",
+    "total": 45.54,
+    "items": [
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 7
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 9
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(555) 123-4567",
+    "payment_method": "Cash",
+    "image_path": "/img/46"
+  },
+  {
+    "store": "Walmart",
+    "date": "2025-05-28 14:07:25",
+    "total": 43.96,
+    "items": [
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 1
+      },
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 5
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 5
+      },
+      {
+        "name": "Chicken",
+        "price": 6.99,
+        "quantity": 3
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(987) 654-3210",
+    "payment_method": "Amex",
+    "image_path": "/img/47"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-16 21:00:25",
+    "total": 15.5,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 1
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 1
+      },
+      {
+        "name": "Bread",
+        "price": 1.49,
+        "quantity": 8
+      }
+    ],
+    "address": "789 Oak St, Greendale",
+    "phone": "(123) 456-7890",
+    "payment_method": "Discover",
+    "image_path": "/img/48"
+  },
+  {
+    "store": "Whole Foods",
+    "date": "2025-06-03 22:27:25",
+    "total": 21.21,
+    "items": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "quantity": 2
+      },
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 1
+      },
+      {
+        "name": "Pasta",
+        "price": 1.99,
+        "quantity": 6
+      }
+    ],
+    "address": "123 Main St, Springfield",
+    "phone": "(123) 456-7890",
+    "payment_method": "Cash",
+    "image_path": "/img/49"
+  },
+  {
+    "store": "Walmart",
+    "date": "2025-06-09 08:37:25",
+    "total": 58.44,
+    "items": [
+      {
+        "name": "Eggs",
+        "price": 3.29,
+        "quantity": 9
+      },
+      {
+        "name": "Apples",
+        "price": 0.99,
+        "quantity": 7
+      },
+      {
+        "name": "Bananas",
+        "price": 0.59,
+        "quantity": 6
+      },
+      {
+        "name": "Cheese",
+        "price": 4.59,
+        "quantity": 4
+      }
+    ],
+    "address": "456 Elm St, Rivertown",
+    "phone": "(123) 456-7890",
+    "payment_method": "Visa",
+    "image_path": "/img/50"
+  }
+]
