@@ -97,7 +97,7 @@ def get_all_receipts():
 			'store':          row[4],
 			'address':        row[5],
 			'phone':          row[6],
-			'payment method': row[7],
+			'payment_method': row[7],
 			'image_path':     row[8]}
 			for row in rows]
 	return make_response(jsonify(receipts), 200)
