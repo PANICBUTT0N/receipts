@@ -3,13 +3,15 @@ from PIL import Image
 import receipt_parser_utils
 
 class ReceiptParser:
-    def __init__(self, ocr_json_path: str, image_path):
+    def __init__(self, ocr_json_path: str, image_path: str):
         with open(ocr_json_path, "r") as f:
             self.ocr_data = json.load(f)
 
         # image width/height
         with Image.open(image_path) as img:
             self.width, self.height = img.size
+
+        self.width = int(self.width/2)
 
         # ocr data
         self.raw_texts = self.ocr_data["rec_texts"]
@@ -29,10 +31,10 @@ class ReceiptParser:
         pass
 
     def __str__(self):
-        return str(self.entries[:5])
+        return str(self.entries[0])
     
-json_path = "ocr/ocr_output/receipt1/receipt1_res.json"
-img_path = "receipts/receipt1.png"
+json_path = "cleaning-layer/test_receipts/receipt1_res.json"
+img_path = "cleaning-layer/test_receipts/receipt1_ocr_res_img.png"
 receiptParser = ReceiptParser(json_path, img_path)
 
 print(receiptParser)
