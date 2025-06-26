@@ -93,7 +93,7 @@ def add_receipt():
 	conn = connect_to_db()
 	cur = conn.cursor()
 	cur.execute(
-			"INSERT INTO receipts (item, store, price, date, image_path) VALUES (%s, %s)",
+			"INSERT INTO receipts (item, store, price, date, image_path) VALUES (%s, %s, %s, %s, %s)",
 			(item, store, price, date, image_path))
 	conn.commit()
 	cur.close()
