@@ -1,5 +1,3 @@
-console.log('scripts.js loaded');
-
 function getAllReceipts() {
 	fetch('http://localhost:5000/api/get_all_receipts')
 		.then(res => res.json())
