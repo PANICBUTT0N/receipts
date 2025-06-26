@@ -1,6 +1,7 @@
 import json
 from PIL import Image
-import receipt_parser_utils
+import receipt_parser_utils as rpu
+import pprint
 
 class ReceiptParser:
     def __init__(self, ocr_json_path: str, image_path: str):
@@ -21,20 +22,46 @@ class ReceiptParser:
         # combining data into list of dicts for each text box
         self.entries = self._combine_data()
 
+        # weights for each data point
+        self.STORE_NAME_WEIGHTS = {
+            'top': 10,
+            'area': 1000,
+            'confidence': 10,
+            'center': 10,
+            'caps': 10,
+            'address': 10,
+            'blacklist': 10
+        }
+
     def _combine_data(self):
         return [
             {"text": t, "confidence": c, "bbox": b}
             for t, c, b in zip(self.raw_texts, self.confidences, self.bboxes)
         ]
     
-    def extract_store_name(self):
-        pass
+    def store_name_scores(self) -> list[str]:
+        scores = [f"{block['text']} {rpu.debug_block_score(block, self.height, self.width, self.STORE_NAME_WEIGHTS)}" for block in self.entries]
+        return scores
+    
+    def store_name_score(self, index: int) -> dict:
+        return rpu.debug_block_score(self.entries[index], self.height, self.width, self.STORE_NAME_WEIGHTS)
+    
+    def extract_store_name(self) -> str:
+        scores = [rpu.score_text_block(block, self.height, self.width, self.STORE_NAME_WEIGHTS) for block in self.entries]
+        max_index = scores.index(max(scores))
+
+        return self.entries[max_index]['text']
 
     def __str__(self):
-        return str(self.entries[0])
+        return "ReceiptParser"
     
 json_path = "cleaning-layer/test_receipts/receipt1_res.json"
 img_path = "cleaning-layer/test_receipts/receipt1_ocr_res_img.png"
-receiptParser = ReceiptParser(json_path, img_path)
+receipt_parser = ReceiptParser(json_path, img_path)
 
-print(receiptParser)
+
+for i in range(len(receipt_parser.entries)):
+    pprint.pprint(receipt_parser.store_name_score(i))
+    print('\n')
+
+print(f"STORE NAME: {receipt_parser.extract_store_name()}")
