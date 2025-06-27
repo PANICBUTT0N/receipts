@@ -35,6 +35,10 @@ def home():
 	return render_template('index.html')
 
 
+@app.route('/receipt/<int:receipt_id>')
+def receipt_detail(receipt_id):
+	return render_template('receipt.html', receipt_id=receipt_id)
+
 @app.route('/api/build_schema', methods=['POST'])
 def build_schema():
 	conn = connect_to_db()
