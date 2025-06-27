@@ -61,7 +61,7 @@ def get_receipt():
 
 	conn = connect_to_db()
 	cur = conn.cursor()
-	cur.execute('SELECT * FROM receipts WHERE id = %s', receipt_id)
+	cur.execute('SELECT * FROM receipts WHERE id = %s', (receipt_id,))
 	rows = cur.fetchall()
 	cur.close()
 	release_db(conn)
