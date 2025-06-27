@@ -67,20 +67,21 @@ def get_receipt():
 	conn = connect_to_db()
 	cur = conn.cursor()
 	cur.execute('SELECT * FROM receipts WHERE id = %s', (receipt_id,))
-	row = cur.fetchall()
+	rows = cur.fetchall()
+	print(rows)
 	cur.close()
 	release_db(conn)
 
 	receipts = {
-			'id':             row[0],
-			'date':           row[1],
-			'items':          row[2],
-			'total':          row[3],
-			'store':          row[4],
-			'address':        row[5],
-			'phone':          row[6],
-			'payment method': row[7],
-			'image_path':     row[8]}
+			'id':             rows[0][0],
+			'date':           rows[0][1],
+			'items':          rows[0][2],
+			'total':          rows[0][3],
+			'store':          rows[0][4],
+			'address':        rows[0][5],
+			'phone':          rows[0][6],
+			'payment method': rows[0][7],
+			'image_path':     rows[0][8]}
 	return make_response(jsonify(receipts), 200)
 
 
