@@ -39,6 +39,7 @@ def home():
 def receipt_detail(receipt_id):
 	return render_template('receipt.html', receipt_id=receipt_id)
 
+
 @app.route('/api/build_schema', methods=['POST'])
 def build_schema():
 	conn = connect_to_db()
@@ -66,11 +67,11 @@ def get_receipt():
 	conn = connect_to_db()
 	cur = conn.cursor()
 	cur.execute('SELECT * FROM receipts WHERE id = %s', (receipt_id,))
-	rows = cur.fetchall()
+	row = cur.fetchall()
 	cur.close()
 	release_db(conn)
 
-	receipts = [{
+	receipts = {
 			'id':             row[0],
 			'date':           row[1],
 			'items':          row[2],
@@ -80,7 +81,6 @@ def get_receipt():
 			'phone':          row[6],
 			'payment method': row[7],
 			'image_path':     row[8]}
-			for row in rows]
 	return make_response(jsonify(receipts), 200)
 
 
