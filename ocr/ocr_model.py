@@ -22,6 +22,7 @@ class ocr_processor:
             lang = 'en',
         )
     def process_image(self, img_path: str, output_directory: str, output_file_name: str = "") -> List[str] :
+        
         """
         Processes images using the PaddleOCR model and returns the OCR results.
 
