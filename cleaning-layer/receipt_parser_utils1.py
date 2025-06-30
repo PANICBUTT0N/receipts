@@ -45,13 +45,15 @@ def get_coords(block: dict) -> tuple:
 
     return (x_min, y_min, x_max, y_max)
 
-def get_y_pos_norm(block: dict, entries: list) -> float:
-    min_y, max_y = get_min_max_y(entries)
-    return (get_coords(block)[1] - min_y) / (max_y - min_y)
+def get_y_pos_norm(block: dict, image_height: int) -> float:
+    y_min, _, y_max, _ = get_coords(block)
+    center_y = (y_min + y_max) / 2
+    return center_y / image_height
 
-def get_x_pos_norm(block: dict, entries: list) -> float:
-    min_x, max_x = get_min_max_x(entries)
-    return (get_coords(block)[1] - min_x) / (max_x - min_x)
+def is_center_aligned(block: dict, image_width: int, tolerance=0.2) -> bool:
+    x_min, _, x_max, _ = get_coords(block)
+    center_x = (x_min + x_max) / 2
+    return abs(center_x - image_width / 2) < (image_width * tolerance)
 
 def get_area_norm(block: dict, entries: list) -> float:
     min_area, max_area = get_min_max_area(entries)
@@ -62,14 +64,6 @@ def get_area_norm(block: dict, entries: list) -> float:
 FUNCTIONS RETURN VALUES NEEDED FOR NORMALIZATION
 """
 
-def get_min_max_y(entries: list) -> tuple:
-    y_pos = [get_coords(block)[1] for block in entries]
-    return (min(y_pos), max(y_pos))
-
-def get_min_max_x(entries: list) -> tuple:
-    x_pos = [get_coords(block)[0] for block in entries]
-    return (min(x_pos), max(x_pos))
-
 def get_min_max_area(entries: list) -> tuple:
     areas = []
     for block in entries:
@@ -79,5 +73,20 @@ def get_min_max_area(entries: list) -> tuple:
     return (min(areas), max(areas))
 
 """
-
+SCORING FUNCTIONS FOR EACH FEATURE
 """
+
+def store_name_score(block: dict, image_height: int, image_width: int, entries: list, weights: dict) -> dict:
+    score_debug = {
+        'TEXT': block['text'],
+        '+Y POS': 1 - get_y_pos_norm(block, image_height),
+        '+BBOX AREA': get_area_norm(block, entries),
+        '+CAPITALIZE': is_capitalized(block),
+        '+CENTER ALIGNED': is_center_aligned(block, image_width),
+        '+CONFIDENCE': get_confidence(block),
+        '-PRICE FORMAT': has_price_format(block),
+        '-DATE FORMAT': has_date_format(block),
+        '-PHONE FORMAT': has_phone_format(block)
+    }
+
+    return score_debug
