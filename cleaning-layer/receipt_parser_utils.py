@@ -1,5 +1,9 @@
 import re
 
+"""
+FUNCTIONS TO GET FEATURES OF INDIVIDUAL BLOCKS OF TEXT
+"""
+
 def is_address_like(text: str) -> bool:
     return bool(re.search(r"\d{5}|\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}|\d+ [A-Za-z ]+ (St|Ave|Blvd|Rd|Ln|Dr)", text))
 
@@ -20,11 +24,23 @@ def bounding_box_area(f_bbox: tuple) -> int:
     return (x_max - x_min) * (y_max - y_min)
 
 # takes in unformatted block bbox
-def get_bbox_coords(bbox: list) -> tuple[int, int, int, int]:
+def get_bbox_coords(bbox: list[list[int]]) -> tuple[int, int, int, int]:
     # x_min, y_min, x_max, y_max
     return (bbox[0][0], bbox[0][1], bbox[2][0], bbox[2][1])
 
-def debug_block_score(block: dict, image_height: int, image_width: int, weights: dict) -> dict:
+
+"""
+FUNCTIONS TO GET FEATURES OF ALL BLOCKS WITHIN RECEIPT
+"""
+def get_min_max_area(entries: list[dict]) -> tuple:
+    areas = [bounding_box_area(get_bbox_coords(block['bbox'])) for block in entries]
+    return (min(areas), max(areas))
+
+
+"""
+FUNCTION TO SCORE INDIVIDUAL BLOCK OF TEXT FOR SPECIFIC RECEIPT FEATURES
+"""
+def block_store_score(block: dict, image_height: int, image_width: int, min_area: int, max_area: int, weights: dict) -> dict:
     text = block['text']
     confidence = block['confidence']
     f_bbox = get_bbox_coords(block['bbox'])
@@ -32,31 +48,7 @@ def debug_block_score(block: dict, image_height: int, image_width: int, weights:
     x_min, y_min, x_max, y_max = f_bbox
     norm_y = y_min / image_height
     area = bounding_box_area(f_bbox)
-    center_aligned = is_center_aligned(f_bbox, image_width)
-    caps = is_title_or_caps(text)
-    address_like = is_address_like(text)
-    blacklist = is_blacklisted(text)
-
-    score = {
-        'TEXT': text,
-        '+top': weights['top'] * (1 - norm_y),
-        '+area': weights['area'] * (area/(image_width*image_height)),
-        '+confidence': weights['confidence'] * confidence,
-        '+center aligned': weights['center'] * int(center_aligned),
-        '+caps': weights['caps'] * int(caps),
-        '-address like': weights['address'] * int(address_like),
-        '-blacklist words/symbols': weights['blacklist'] * int(blacklist)
-    }
-    return score
-
-def score_text_block(block: dict, image_height: int, image_width: int, weights: dict) -> float:
-    text = block['text']
-    confidence = block['confidence']
-    f_bbox = get_bbox_coords(block['bbox'])
-
-    x_min, y_min, x_max, y_max = f_bbox
-    norm_y = y_min / image_height
-    area = bounding_box_area(f_bbox)
+    norm_area = (area - min_area) / (max_area - min_area)
     center_aligned = is_center_aligned(f_bbox, image_width)
     caps = is_title_or_caps(text)
     address_like = is_address_like(text)
@@ -64,11 +56,24 @@ def score_text_block(block: dict, image_height: int, image_width: int, weights: 
 
     score = (
         weights['top'] * (1 - norm_y) +
-        weights['area'] * (area/(image_width*image_height)) +
+        weights['area'] * norm_area +
         weights['confidence'] * confidence +
         weights['center'] * int(center_aligned) +
         weights['caps'] * int(caps) -
         weights['address'] * int(address_like) -
         weights['blacklist'] * int(blacklist)
     )
-    return score
+
+    score_debug = {
+        'TEXT': text,
+        'SCORE': score,
+        '+top': weights['top'] * (1 - norm_y),
+        '+area': weights['area'] * norm_area,
+        '+confidence': weights['confidence'] * confidence,
+        '+center aligned': weights['center'] * int(center_aligned),
+        '+caps': weights['caps'] * int(caps),
+        '-address like': weights['address'] * int(address_like),
+        '-blacklist words/symbols': weights['blacklist'] * int(blacklist)
+    }
+
+    return score_debug

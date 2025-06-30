@@ -22,15 +22,18 @@ class ReceiptParser:
         # combining data into list of dicts for each text box
         self.entries = self._combine_data()
 
+        # information on blocks
+        self.block_min_area, self.block_max_area = rpu.get_min_max_area(self.entries)
+
         # weights for each data point
         self.STORE_NAME_WEIGHTS = {
-            'top': 10,
-            'area': 1000,
-            'confidence': 10,
-            'center': 10,
-            'caps': 10,
-            'address': 10,
-            'blacklist': 10
+            'top': 1,
+            'area': 1,
+            'confidence': 1,
+            'center': 1,
+            'caps': 1,
+            'address': 1,
+            'blacklist': 1
         }
 
     def _combine_data(self):
@@ -39,29 +42,23 @@ class ReceiptParser:
             for t, c, b in zip(self.raw_texts, self.confidences, self.bboxes)
         ]
     
-    def store_name_scores(self) -> list[str]:
-        scores = [f"{block['text']} {rpu.debug_block_score(block, self.height, self.width, self.STORE_NAME_WEIGHTS)}" for block in self.entries]
-        return scores
-    
-    def store_name_score(self, index: int) -> dict:
-        return rpu.debug_block_score(self.entries[index], self.height, self.width, self.STORE_NAME_WEIGHTS)
+    def store_name_scores(self) -> None:
+        for block in self.entries:
+            pprint.pprint(rpu.block_store_score(block, self.height, self.width, self.block_min_area, self.block_max_area, self.STORE_NAME_WEIGHTS))
+            print("\n")
     
     def extract_store_name(self) -> str:
-        scores = [rpu.score_text_block(block, self.height, self.width, self.STORE_NAME_WEIGHTS) for block in self.entries]
+        scores = [rpu.block_store_score(block, self.height, self.width, self.block_min_area, self.block_max_area, self.STORE_NAME_WEIGHTS)['SCORE'] for block in self.entries]
         max_index = scores.index(max(scores))
 
         return self.entries[max_index]['text']
-
-    def __str__(self):
-        return "ReceiptParser"
+    
     
 json_path = "cleaning-layer/test_receipts/receipt1_res.json"
 img_path = "cleaning-layer/test_receipts/receipt1_ocr_res_img.png"
 receipt_parser = ReceiptParser(json_path, img_path)
 
+receipt_parser.store_name_scores()
+print(receipt_parser.extract_store_name())
 
-for i in range(len(receipt_parser.entries)):
-    pprint.pprint(receipt_parser.store_name_score(i))
-    print('\n')
-
-print(f"STORE NAME: {receipt_parser.extract_store_name()}")
+print(receipt_parser.entries[0])
