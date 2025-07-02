@@ -1,11 +1,11 @@
 import json
 from PIL import Image
-import receipt_parser_utils as rpu
+import receipt_parser_utils1 as rpu
 import pprint
 
 class ReceiptParser:
     def __init__(self, ocr_json_path: str, image_path: str):
-        with open(ocr_json_path, "r") as f:
+        with open(ocr_json_path, 'r') as f:
             self.ocr_data = json.load(f)
 
         # image width/height
@@ -15,9 +15,9 @@ class ReceiptParser:
         self.width = int(self.width/2)
 
         # ocr data
-        self.raw_texts = self.ocr_data["rec_texts"]
-        self.confidences = self.ocr_data["rec_scores"]
-        self.bboxes = self.ocr_data["rec_polys"]
+        self.raw_texts = self.ocr_data['rec_texts']
+        self.confidences = self.ocr_data['rec_scores']
+        self.bboxes = self.ocr_data['rec_polys']
 
         # combining data into list of dicts for each text box
         self.entries = self._combine_data()
@@ -26,7 +26,7 @@ class ReceiptParser:
         self.block_min_area, self.block_max_area = rpu.get_min_max_area(self.entries)
 
         # weights for each data point
-        self.STORE_NAME_WEIGHTS = {
+        self.DEFAULT_WEIGHTS = {
             'top': 1,
             'area': 1,
             'confidence': 1,
@@ -44,21 +44,23 @@ class ReceiptParser:
     
     def store_name_scores(self) -> None:
         for block in self.entries:
-            pprint.pprint(rpu.block_store_score(block, self.height, self.width, self.block_min_area, self.block_max_area, self.STORE_NAME_WEIGHTS))
-            print("\n")
-    
-    def extract_store_name(self) -> str:
-        scores = [rpu.block_store_score(block, self.height, self.width, self.block_min_area, self.block_max_area, self.STORE_NAME_WEIGHTS)['SCORE'] for block in self.entries]
-        max_index = scores.index(max(scores))
+            pprint.pprint(rpu.store_name_score(block, self.height, self.width, self.entries, self.DEFAULT_WEIGHTS))
+            print('\n')
 
-        return self.entries[max_index]['text']
+    def date_scores(self) -> None:
+        for block in self.entries:
+            pprint.pprint(rpu.date_score(block, self.DEFAULT_WEIGHTS))
+            print('\n') 
+
+    def total_price_scores(self) -> None:
+        for block in self.entries:
+            pprint.pprint(rpu.total_price_score(block, self.height, self.width, self.entries, self.DEFAULT_WEIGHTS))
+            print('\n')
     
-    
-json_path = "cleaning-layer/test_receipts/receipt1_res.json"
-img_path = "cleaning-layer/test_receipts/receipt1_ocr_res_img.png"
+json_path = 'cleaning-layer/test_receipts/0.json'
+img_path = 'cleaning-layer/test_receipts/ocr_output_0.jpg'
 receipt_parser = ReceiptParser(json_path, img_path)
 
-receipt_parser.store_name_scores()
-print(receipt_parser.extract_store_name())
+receipt_parser.total_price_scores()
 
 print(receipt_parser.entries[0])
