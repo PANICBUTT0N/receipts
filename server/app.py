@@ -14,9 +14,9 @@ CORS(app)
 db_pool = pool.SimpleConnectionPool(
 		minconn=1,
 		maxconn=10,
-		dbname=os.getenv('DB_NAME'),
-		user=os.getenv('DB_USER'),
-		password=os.getenv('DB_PASSWORD'),
+		dbname=os.getenv('POSTGRES_DB'),
+		user=os.getenv('POSTGRES_USER'),
+		password=os.getenv('POSTGRES_PASSWORD'),
 		host=os.getenv('DB_HOST'),
 		port=os.getenv('DB_PORT')
 )
